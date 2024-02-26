@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('county_id');
+            $table->foreignId('county_id')->constrained();
             $table->string('name');
             $table->timestamps();
         });
