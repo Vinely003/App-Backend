@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('messages', [MessagesController::class, 'getMessages']);
+Route::get('message', [MessagesController::class, 'show']);

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\MessagesResource;
-use App\Models\Messages;
-use Illuminate\Http\Request;
+use App\Models\Message;
 
 class MessagesController extends Controller
 {
-    public function getMessage(Messages $messages): MessagesResource
+    public function show(): MessagesResource
     {
-        return new MessagesResource($messages);
+        $message = Message::all();
+        return new MessagesResource($message);
     }
 }
