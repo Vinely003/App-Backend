@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('message', [CountyController::class, 'show']);
+Route::get('counties', [CountyController::class, 'show']);
