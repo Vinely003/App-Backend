@@ -2,21 +2,20 @@
 
 namespace App\Http\Resources;
 
-use App\Models\Message;
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use App\Models\County;
 
-/** @mixin Message */
-class MessagesResource extends ResourceCollection
+/** @mixin County */
+class CountyResource extends ResourceCollection
 {
     public function toArray($request): array
     {
         return [
             'data' => $this->collection->map(function ($item) {
                 return [
-                    'name' => $item->name,
-                    'message' => $item->message,
+                    'name' => $item->name
                 ];
-            })->toArray(),
+            })->toArray()
         ];
     }
 }
