@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\CityResource;
+use App\Http\Requests\CityRequest;
 use App\Models\City;
-use App\Models\County;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,17 +11,12 @@ use Illuminate\Support\Facades\DB;
 class CityController extends Controller
 {
 
-    public function store(Request $request): CityResource
+    public function store(CityRequest $cityRequest)
     {
-        $request->validate([
-            'name' => 'required|string',
+        DB::table('cities')->insert([
+            'name' => $cityRequest->input('name'),
+            'county_id' => $cityRequest->input('county_id')
         ]);
-        $newcity = DB::table('cities')->insert([
-            'name' => $request->input('name'),
-            'id' => 1
-        ]);
-
-        return new CityResource($newcity);
     }
 
     public function show(City $city)

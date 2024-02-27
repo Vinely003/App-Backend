@@ -13,6 +13,7 @@ class CountyResource extends ResourceCollection
         return [
             'data' => $this->collection->map(function ($item) {
                 return [
+                    'id' => $item->id,
                     'name' => $item->name
                 ];
             })->toArray()
