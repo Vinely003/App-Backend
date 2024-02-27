@@ -19,4 +19,6 @@ Route::get('counties', [CountyController::class, 'show']);
 Route::controller(CityController::class)->group(function () {
     Route::post('newcity', 'store');
     Route::get('citytable', 'show');
+    Route::post('update', 'update');
+    Route::delete('destroy', 'destroy');
 });

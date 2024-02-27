@@ -28,11 +28,13 @@ class CityController extends Controller
 
     public function update(Request $request, City $city)
     {
-        //
     }
 
-    public function destroy(City $city)
+    public function destroy(Request $request)
     {
-        //
+        $id = $request->input('id');
+        dd($id);
+        $city = City::findOrFail($id);
+        $city->delete();
     }
 }
