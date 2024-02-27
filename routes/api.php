@@ -16,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('counties', [CountyController::class, 'show']);
-Route::post('newcity', [CityController::class, 'store']);
+Route::controller(CityController::class)->group(function () {
+    Route::post('newcity', 'store');
+    Route::get('citytable', 'show');
+});
