@@ -12,6 +12,7 @@ class CityResource extends ResourceCollection
             'data' => $this->collection->map(function ($item) {
                 return [
                     'id' => $item->id,
+                    'county_id' => $item->county_id,
                     'name' => $item->name
                 ];
             })->toArray()

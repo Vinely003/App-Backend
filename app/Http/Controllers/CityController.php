@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CityRequest;
-use App\Http\Resources\CountyResource;
+use App\Http\Resources\CityResource;
 use App\Models\City;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,10 +20,10 @@ class CityController extends Controller
         ]);
     }
 
-    public function show(): CountyResource
+    public function show(): CityResource
     {
         $city = City::all();
-        return new CountyResource($city);
+        return new CityResource($city);
     }
 
     public function update(Request $request, City $city)
