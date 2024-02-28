@@ -26,8 +26,11 @@ class CityController extends Controller
         return new CityResource($city);
     }
 
-    public function update(Request $request, City $city)
+    public function update(CityRequest $cityRequest, $id)
     {
+        DB::table('cities')->where('id', $id)->update([
+            'name' => $cityRequest->input('name')
+        ]);
     }
 
     public function destroy($id)
