@@ -20,7 +20,7 @@ class CityController extends Controller
         ]);
     }
 
-    public function show(): CityResource
+    public function index(): CityResource
     {
         $city = City::all();
         return new CityResource($city);

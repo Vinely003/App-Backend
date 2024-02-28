@@ -15,12 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('counties', [CountyController::class, 'show']);
-Route::controller(CityController::class)->group(function () {
-    Route::post('newcity', 'store');
-    Route::get('citytable', 'show');
-    Route::middleware('cors')->group(function () {
-        Route::post('update', 'update');
-        Route::delete('destroy/{id}', 'destroy');
-    });
+Route::middleware('api')->group(function () {
+    Route::get('counties', [CountyController::class, 'show']);
+    Route::resource('cities', CityController::class);
 });
