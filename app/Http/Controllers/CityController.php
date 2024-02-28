@@ -30,10 +30,8 @@ class CityController extends Controller
     {
     }
 
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $id = $request->input('id');
-        dd($id);
         $city = City::findOrFail($id);
         $city->delete();
     }
