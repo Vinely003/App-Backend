@@ -532,7 +532,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Fruitcake\\Cors\\": "src/"
+                    "App\\": "app/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",

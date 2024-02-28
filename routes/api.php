@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('counties', [CountyController::class, 'show']);
-Route::controller(CityController::class)->group(function () {
+Route::controller(CityController::class)->middlleware('cors')->group(function () {
     Route::post('newcity', 'store');
     Route::get('citytable', 'show');
     Route::post('update', 'update');
